@@ -9,7 +9,7 @@ public class StringCalculator {
 		if( "".equals(numbers) )
 			return 0;
 		else {
-			String[] values = numbers.split(",");
+			String[] values = numbers.split(",|\n");
 			int result = 0;
 			for( String value : values ) {
 				result += intValue(value);
