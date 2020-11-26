@@ -14,5 +14,12 @@ public class StringCalculatorTest {
 		int result = calculator.add("");
 		assertEquals(0, result);
 	}
+	
+	@Test
+	@DisplayName("String Calculator with Single Number Test")
+	public void testWithSingleNumberString() {
+		int result = calculator.add("2");
+		assertEquals(2, result);
+	}
 
 }
