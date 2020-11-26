@@ -97,5 +97,12 @@ public class StringCalculatorTest {
 		int result = calculator.add("1,2,8,1001,3000");
 		assertEquals(11, result);
 	}
+	
+	@Test
+	@DisplayName("with 3 Numbers delimited by @@@ delimiter")
+	public void testWiththreeNumberAnyLengthDelimiter() {
+		int result = calculator.add("//[@@@]\n1@@@8@@@12");
+		assertEquals(21, result);
+	}
 
 }
