@@ -34,7 +34,7 @@ public class StringCalculatorTest {
 	@DisplayName("String Calculator with Three Numbers Test")
 	public void testWithThreeNumberString() {
 		int result = calculator.add("6,2,3");
-		assertEquals(12, result);
+		assertEquals(11, result);
 	}
 	
 

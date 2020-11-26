@@ -10,10 +10,11 @@ public class StringCalculator {
 			return 0;
 		else {
 			String[] values = numbers.split(",");
-			if(values.length == 1 ) {
-				return intValue(values[0]);
+			int result = 0;
+			for( String value : values ) {
+				result += intValue(value);
 			}
-			return intValue(values[0]) + intValue(values[1]);
+			return result;
 		}
 	}
 }
