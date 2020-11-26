@@ -1,6 +1,7 @@
 package com.sample;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -59,6 +60,28 @@ public class StringCalculatorTest {
 		int result = calculator.add("//@\n1@2@3@5@6");
 		assertEquals(17, result);
 	}
+	
+	@Test
+	@DisplayName("with 5 Numbers delimited by comma(including negative number)")
+	public void testWithFiveNumberIncludesNegative() {
+		assertThrows(IllegalArgumentException.class,()-> calculator.add("1,2,3,5,-6") );
 
+		try {
+			calculator.add("1,2,3,5,-6");
+		} catch( IllegalArgumentException ex ) {
+			assertEquals("negatives not allowed [-6]", ex.getMessage());
+		}
+	}
+	
+	@Test
+	@DisplayName("with 5 Numbers delimited by comma(including negative number(s))")
+	public void testWithFiveNumberIncludesMultipleNegativeNos() {
+		assertThrows( IllegalArgumentException.class , () -> calculator.add("1,2,-3,5,-6") );
+		try {
+			calculator.add("1,2,-3,5,-6");
+		} catch( IllegalArgumentException ex ) {
+			assertEquals("negatives not allowed [-3,-6]", ex.getMessage());
+		}
+	}
 
 }
