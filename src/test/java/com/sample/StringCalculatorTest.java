@@ -100,9 +100,15 @@ public class StringCalculatorTest {
 	
 	@Test
 	@DisplayName("with 3 Numbers delimited by @@@ delimiter")
-	public void testWiththreeNumberAnyLengthDelimiter() {
+	public void testWithThreeNumberAnyLengthDelimiter() {
 		int result = calculator.add("//[@@@]\n1@@@8@@@12");
 		assertEquals(21, result);
 	}
 
+	@Test
+	@DisplayName("with 3 Numbers delimited by multiple delimiter")
+	public void testWithThreeNumberMultipleDelimiter() {
+		int result = calculator.add("//\\[*\\][%]\n1*6%12");
+		assertEquals(19, result);
+	}
 }
