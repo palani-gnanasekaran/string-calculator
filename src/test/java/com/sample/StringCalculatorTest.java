@@ -108,7 +108,7 @@ public class StringCalculatorTest {
 	@Test
 	@DisplayName("with 3 Numbers delimited by multiple delimiter")
 	public void testWithThreeNumberMultipleDelimiter() {
-		int result = calculator.add("//\\[*\\][%]\n1*6%12");
+		int result = calculator.add("//[*][%]\n1*6%12");
 		assertEquals(19, result);
 	}
 }
