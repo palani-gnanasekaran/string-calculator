@@ -21,5 +21,12 @@ public class StringCalculatorTest {
 		int result = calculator.add("2");
 		assertEquals(2, result);
 	}
+	
+	@Test
+	@DisplayName("String Calculator with Two Numbers Test")
+	public void testWithTwoNumberString() {
+		int result = calculator.add("2,3");
+		assertEquals(5, result);
+	}
 
 }
