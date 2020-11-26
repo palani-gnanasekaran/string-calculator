@@ -9,7 +9,14 @@ public class StringCalculator {
 		if( "".equals(numbers) )
 			return 0;
 		else {
-			String[] values = numbers.split(",|\n");
+			String delimiter = ",|\n";
+			String input = numbers;
+			if( numbers.startsWith("//") ) {
+				String[] values = numbers.split("\n");
+				delimiter=values[0].substring(2);
+				input = values[1];
+			}
+			String[] values = input.split(delimiter);
 			int result = 0;
 			for( String value : values ) {
 				result += intValue(value);
