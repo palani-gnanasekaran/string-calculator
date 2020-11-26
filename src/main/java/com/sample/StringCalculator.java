@@ -1,5 +1,8 @@
 package com.sample;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class StringCalculator {
 	
 	private int intValue( String value ) {
@@ -17,9 +20,22 @@ public class StringCalculator {
 				input = values[1];
 			}
 			String[] values = input.split(delimiter);
-			int result = 0;
+			List<Integer> numberList = new ArrayList<>();
+			List<Integer> negativeList = new ArrayList<>();
 			for( String value : values ) {
-				result += intValue(value);
+				int intVal = intValue(value);
+				if( intVal < 0 ) {
+					negativeList.add(intVal);
+				}
+				numberList.add(intVal);
+			}
+			if( !negativeList.isEmpty() ) {
+				throw new IllegalArgumentException("negatives not allowed " + negativeList.toString());
+			}
+			
+			int result = 0;
+			for( Integer value : numberList ) {
+				result += value;
 			}
 			return result;
 		}

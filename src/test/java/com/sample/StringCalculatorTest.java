@@ -80,7 +80,7 @@ public class StringCalculatorTest {
 		try {
 			calculator.add("1,2,-3,5,-6");
 		} catch( IllegalArgumentException ex ) {
-			assertEquals("negatives not allowed [-3,-6]", ex.getMessage());
+			assertEquals("negatives not allowed [-3, -6]", ex.getMessage());
 		}
 	}
 
