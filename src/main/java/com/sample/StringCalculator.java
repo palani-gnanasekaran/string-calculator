@@ -17,6 +17,9 @@ public class StringCalculator {
 			if( numbers.startsWith("//") ) {
 				String[] values = numbers.split("\n");
 				delimiter=values[0].substring(2);
+				if(delimiter.startsWith("[")) {
+					delimiter=delimiter.substring(1,delimiter.length()-1);
+				}
 				input = values[1];
 			}
 			String[] values = input.split(delimiter);
