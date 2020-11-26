@@ -83,5 +83,19 @@ public class StringCalculatorTest {
 			assertEquals("negatives not allowed [-3, -6]", ex.getMessage());
 		}
 	}
+	
+	@Test
+	@DisplayName("with 5 Numbers delimited by comma(including bigger number)")
+	public void testWithFiveNumberIncludesBiggerNo() {
+		int result = calculator.add("1,8,4,5,1006");
+		assertEquals(18, result);
+	}
+	
+	@Test
+	@DisplayName("with 5 Numbers delimited by comma(including bigger number(s))")
+	public void testWithFiveNumberIncludesBiggerNos() {
+		int result = calculator.add("1,2,8,1001,3000");
+		assertEquals(11, result);
+	}
 
 }
