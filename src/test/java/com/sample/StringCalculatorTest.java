@@ -28,5 +28,21 @@ public class StringCalculatorTest {
 		int result = calculator.add("2,3");
 		assertEquals(5, result);
 	}
+	
+
+	@Test
+	@DisplayName("String Calculator with Three Numbers Test")
+	public void testWithThreeNumberString() {
+		int result = calculator.add("6,2,3");
+		assertEquals(12, result);
+	}
+	
+
+	@Test
+	@DisplayName("String Calculator with Five Numbers Test")
+	public void testWithFiveNumberString() {
+		int result = calculator.add("1,2,3,5,6");
+		assertEquals(17, result);
+	}
 
 }
