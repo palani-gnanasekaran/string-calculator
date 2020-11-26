@@ -16,14 +16,14 @@ public class StringCalculatorTest {
 	}
 	
 	@Test
-	@DisplayName("with Single Number input")
+	@DisplayName("with 1 Number input")
 	public void testWithSingleNumber() {
 		int result = calculator.add("2");
 		assertEquals(2, result);
 	}
 	
 	@Test
-	@DisplayName("with Two Numbers input comma delimited")
+	@DisplayName("with 2 Numbers input comma delimited")
 	public void testWithTwoNumbers() {
 		int result = calculator.add("2,3");
 		assertEquals(5, result);
@@ -31,7 +31,7 @@ public class StringCalculatorTest {
 	
 
 	@Test
-	@DisplayName("with Three Numbers input comma delimited")
+	@DisplayName("with 3 Numbers input comma delimited")
 	public void testWithThreeNumbers() {
 		int result = calculator.add("6,2,3");
 		assertEquals(11, result);
@@ -39,7 +39,7 @@ public class StringCalculatorTest {
 	
 
 	@Test
-	@DisplayName("with Five Numbers input comma delimited")
+	@DisplayName("with 5 Numbers input comma delimited")
 	public void testWithFiveNumbers() {
 		int result = calculator.add("1,2,3,5,6");
 		assertEquals(17, result);
@@ -47,9 +47,16 @@ public class StringCalculatorTest {
 	
 
 	@Test
-	@DisplayName("with 3 Numbers delimited by comma & new line")
+	@DisplayName("with 5 Numbers delimited by comma & new line")
 	public void testWithFiveNumberNewLineDelimited() {
 		int result = calculator.add("1,2,3,5\n6");
+		assertEquals(17, result);
+	}
+
+	@Test
+	@DisplayName("with 5 Numbers delimited by customized delimiter")
+	public void testWithFiveNumberCustomizedDelimitor() {
+		int result = calculator.add("//@\n1@2@3@5@6");
 		assertEquals(17, result);
 	}
 
