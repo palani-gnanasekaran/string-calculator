@@ -26,8 +26,9 @@ public class StringCalculator {
 				int intVal = intValue(value);
 				if( intVal < 0 ) {
 					negativeList.add(intVal);
+				} else if( intVal <= 1000 ) {
+					numberList.add(intVal);
 				}
-				numberList.add(intVal);
 			}
 			if( !negativeList.isEmpty() ) {
 				throw new IllegalArgumentException("negatives not allowed " + negativeList.toString());
