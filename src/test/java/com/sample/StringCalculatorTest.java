@@ -111,4 +111,11 @@ public class StringCalculatorTest {
 		int result = calculator.add("//[*][%]\n1*6%12");
 		assertEquals(19, result);
 	}
+	
+	@Test
+	@DisplayName("with 3 Numbers delimited by multiple any length delimiter")
+	public void testWithThreeNumberMultipleAnyLengthDelimiter() {
+		int result = calculator.add("//[***][%%]\n8***7%%10");
+		assertEquals(25, result);
+	}
 }
